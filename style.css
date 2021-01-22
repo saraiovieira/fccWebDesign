@@ -82,8 +82,24 @@ aside{
   justify-content: center;
   text-align: center;
 }
-@media (max-width: 720px) {
+@media (max-width: 600px) {
+  .images .paintings{
+    display: block;
+  }
+  .images .paintings figure{
+    width: 150px;
+    margin: 4px;
+  } 
   .images .paintings figure img {
+    height: 250px;
+  }
+}
+@media (max-width: 1024px){
+  .images .paintings figure{
+    width: 150px;
+    margin: 4px;
+  }
+  .images .paintings figure img{
     height: 250px;
   }
 }
