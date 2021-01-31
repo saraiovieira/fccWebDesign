@@ -8,22 +8,27 @@ body {
 }
 header{
   width: 60%;
-  padding: 20px;
-  margin: auto;
+  margin: 20px auto 100px auto;
   height: auto;
 }
-.img-div{
+#img-div{
   width: 200px;
   height: auto;
   margin-right: 20px;
   float: left;
 }
 #image{
-  max-width: 100%;
-  display: block;
-  height: auto;
+  max-width:100%;
+  display:block;
+  height:auto;
   margin: auto;
   border-radius: 70px;
+}
+#img-caption{
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  top: 260px;
 }
 h1, h2 {
   text-align: center;
@@ -50,62 +55,62 @@ h3{
   padding: 20px;
   border-radius: 40px;
 }
-#makebold{
+.makebold{
   font-weight: bold;
 }
-aside{
+#readmore{
   font-size: 20px;
   text-align: center;
 }
-.images {
+.paintings-container {
   width: 60%;
   height: auto;
-  margin: auto;
+  margin: 40px auto 40px auto;
   background-color: #dbdbdb;
   padding: 20px;
   border-radius: 40px;
 }
-.images .paintings{
+.paintings-container .images-container{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.images .paintings figure {
+.paintings-container .images-container figure {
   width: 250px;
   margin: 30px;
 }
-.images .paintings figure img {
+.paintings-container .images-container figure img {
   width: 100%;
   border-radius: 200px;
   height: 301px;
   margin-right: 5px;
-}
-.images .paintings figure figcaption {
+  }
+.paintings-container .images-container figure figcaption {
   justify-content: center;
   text-align: center;
 }
 @media (max-width: 600px) {
-  .images .paintings{
+  .paintings-container .images-container{
     display: block;
   }
-  .images .paintings figure{
+  .paintings-container .images-container figure{
     width: 150px;
     margin: 4px;
   } 
-  .images .paintings figure img {
+  .paintings-container .images-container figure img {
     height: 250px;
   }
 }
 @media (max-width: 1024px){
-  .images .paintings figure{
+  .paintings-container .images-container figure{
     width: 150px;
     margin: 4px;
   }
-  .images .paintings figure img{
+  .paintings-container .images-container figure img{
     height: 250px;
   }
 }
-.images .seemore{
+.paintings-container #seemore{
   text-align: center;
 }
 footer{
