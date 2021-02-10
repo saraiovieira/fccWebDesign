@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', sans-serif;
+}
+body{
+    background-image: url("https://i.ibb.co/kDktN83/Component-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+    text-align: center;
+}
+form{
+    background-color: #FAFAFA;
+    width: 400px;
+    margin: auto;
+    padding: 1.5em;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+}
+.form-section{
+    margin-bottom: 1em;
+    text-align: left;
+}
+.form-section label {
+    display: block;
+    margin-bottom: .7em;
+}
+header{
+    width: 350px;
+    margin: 50px auto 50px auto;
+}
+h1{
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 0;
+    color: #FAFAFA;
+}
+#description{
+    margin-top: 0;
+    color: #d3d0d0;
+    font-weight: normal;
+}
+.form-section input, .form-section select{
+    border: solid 1px #7c7c7c;
+    width: 100%;
+    display: block;   
+    padding: .5em;
+    border-radius: 3px;
+}
+.form-section input[type=radio], .form-section input[type=checkbox]{
+    width: auto; 
+    display: inline-block;
+  }
+.form-section textarea{
+    width: 100%;
+    padding: 20px 10px;
+    font-size: .8em;
+    border-radius: 3px;
+}
+button{
+    width: 100%;
+    display: block;
+    padding:  10px 10px;
+    font-size: .8em;
+    color: #f7f2f2;
+    background-color: #c77312;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+@media(max-width: 600px){
+    form{
+        background-color: rgba(255,255,255,0.7);
+    }
+    h1{
+        font-size: 1.5em;
+    }
+    header, form{
+        width: 90%;
+    }
+}

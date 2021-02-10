@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Travel Survey Form</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    </head>
+    <body>
+        <header>
+            <h1 id="title">Travel Survey Form</h1>
+            <p id="description">Take the survey to help us create better travel packages</p>
+        </header>
+        <main>
+            <form id="survey-form">
+                <div class="form-section">
+                    <label id="name-label" for="name"> Name </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required> 
+                </div>
+                <div class="form-section">
+                    <label id="email-label" for="email"> Email </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-section">
+                    <label id="number-label" for="number">How many people do you usually travel with?</label>
+                    <input type="number" id="number" name="number" min="0" max="20" placeholder="Number of travelers" required>
+                </div>
+                <div class="form-section">
+                    <label for="accomodation"> Where do you usually stay?</label>
+                    <select id="dropdown" name="accomodation" required>
+                        <option disabled selected> Select accomodation </option>
+                        <option value="apartments"> Apartments </option>
+                        <option value="guest-houses"> Guest Houses </option>
+                        <option value="hostels"> Hostels </option>
+                        <option value="hotels"> Hotels</option>
+                        <option value="motels"> Motels </option>
+                        <option value="resorts"> Resorts </option>
+                    </select>
+                </div>
+                <div class="form-section">
+                    <label for="destiny"> Where do you usually go?</label>
+                    <label for="africa"> 
+                        <input type="radio" id="africa" name="destiny" value="africa"> Africa 
+                    </label>
+                    <label for="americas">
+                        <input type="radio" id="americas" name="destiny" value="Americas">  Americas
+                    </label>
+                    <label for="asia"> 
+                        <input type="radio" id="asia" name="destiny" value="asia"> Asia 
+                    </label>
+                    <label for="europe">
+                        <input type="radio" id="europe" name="destiny" value="europe"> Europe
+                    </label>
+                    <label for="oceania"> 
+                        <input type="radio" id="oceania" name="destiny" value="oceania"> Oceania 
+                    </label>
+                </div>
+                <div class="form-section">
+                    <label for="purpose"> What are the most common purposes of your trips?</label>
+                    <label for="family-vacation"> 
+                        <input type="checkbox" id="family-vacation" name="purpose" value="Family Vacation"> Family Vacation
+                    </label>
+                    <label for="adventure"> 
+                        <input type="checkbox" id="adventure" name="purpose" value="Adventure"> Adventure
+                    </label>
+                    <label for="business"> 
+                        <input type="checkbox" id="business" name="purpose" value="Business"> Business 
+                    </label>
+                    <label for="relaxation"> 
+                        <input type="checkbox" id="relaxation" name="purpose" value="Relaxation"> Relaxation 
+                    </label>
+                    <label for="cultural">  
+                        <input type="checkbox" id="cultural" name="purpose" value="Cultural"> Cultural
+                    </label>
+                    <label for="religious">  
+                        <input type="checkbox" id="religious" name="purpose" value="Religious"> Religious
+                    </label>
+                </div>
+                <div class="form-section">
+                    <label for="comments"> Do you have any comments or preferences? </label>
+                    <textarea id="comments" name="comment" placeholder="Enter your commment..."></textarea>
+                </div>
+                <div class="form-section">
+                    <button type="submit" id="submit"> Submit </button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
