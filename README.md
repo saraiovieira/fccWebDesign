@@ -12,6 +12,6 @@ A responsive website about the painter Vicent Van Gogh with a timeline of his li
 
 A responsive website from an imaginary travel agency that collects data from their costumers to gain information and insights from their travel preferences through a survey form.
 
-### [Product Landing Page] (https://github.com/saraiovieira/fccWebDesign/tree/main/ProductLandingPage)
+### <a href="https://github.com/saraiovieira/fccWebDesign/tree/main/ProductLandingPage"> Product Landing Page </a>
 
 A responsive landing page from an imaginary chocolate brand with a about us section, products section and contact section
