@@ -15,3 +15,7 @@ A responsive website from an imaginary travel agency that collects data from the
 ### <a href="https://github.com/saraiovieira/fccWebDesign/tree/main/ProductLandingPage"> Product Landing Page </a>
 
 A responsive landing page from an imaginary chocolate brand with a about us section, products section and contact section
+
+### <a href="https://github.com/saraiovieira/fccWebDesign/tree/main/TechnicalDocumentationPage"> Technical Documentation Page </a>
+
+A responsive technical documentation page about CSS Layout
