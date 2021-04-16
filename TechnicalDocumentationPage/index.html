@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>CSS Layout</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Normal_flow">Normal flow</a></li>
+            <li><a class="nav-link" href="#The_display_property">The display property</a></li>
+            <li><a class="nav-link" href="#Flexbox">Flexbox</a></li>
+            <li><a class="nav-link" href="#Grid_Layout">Grid Layout</a></li>
+            <li><a class="nav-link" href="#References">References</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    CSS page layout techniques allow us to take elements contained in a web page and control where they                                    
+                    are positioned relative to their default position in normal layout flow, the other elements around
+                    them, their parent container, or the main viewport/window. The page layout techniques we'll be
+                    covering in more detail in this module are:
+                </p>
+                <ul>
+                    <li>Normal Flow</li>
+                    <li>The display property</li>
+                    <li>Flexbox</li>
+                    <li>Grid</li>
+                </ul>
+                <p>Each technique has its uses, advantages, and disadvantages, and no technique is designed to be used
+                    in isolation. By understanding what each method is designed for you will be in a good place to
+                    understand which is the best layout tool for each task.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Normal_flow">
+            <header>Normal flow</header>
+            <article>
+                <p>Normal flow is how the browser lays out HTML pages by default
+                    when you do nothing to control page layout. Let's look at a quick
+                    HTML example:
+                </p>
+                <pre>
+                    <code>
+            <span class="color-grey">&lt;</span><span class="color-red">p</span><span class="color-grey">&gt;</span>I love my cat<span class="color-grey">&lt;&sol;</span><span class="color-red">p</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">ul</span><span class="color-grey">&gt;</span>
+                <span class="color-grey">&lt;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>Buy cat food<span class="color-grey">&lt;&sol;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>
+                <span class="color-grey">&lt;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>Exercice<span class="color-grey">&lt;&sol;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>
+                <span class="color-grey">&lt;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>Cheer up friend<span class="color-grey">&lt;&sol;</span><span class="color-red">li</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;&sol;</span><span class="color-red">ul</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">p</span><span class="color-grey">&gt;</span>The end!<span class="color-grey">&lt;&sol;</span><span class="color-red">p</span><span class="color-grey">&gt;</span>
+                </code>
+                </pre>
+                <p>By default, the browser will display this code as follows:
+                </p>
+                <div class="code">
+                    <p>I love my cat</p>
+                    <ul>
+                        <li>Buy cat food</li>
+                        <li>Exercice</li>
+                        <li>Cheer up friend</li>
+                    </ul>
+                    <p>The end!</p>
+                </div>
+                <p>
+                    Note here how the HTML is displayed in the exact
+                    order in which it appears in the source code,
+                    with elements stacked up on top of one another — the
+                    first paragraph, followed by the unordered list,
+                    followed by the second paragraph.
+                </p>
+                <p>
+                    The elements that appear one below the other are described as block elements,
+                    in contrast to inline elements, which appear one beside the other, like the individual words in a
+                    paragraph.
+                </p>
+                <p>
+                    <span class="make-bold">Note:</span> The direction in which block element
+                    contents are laid out is described as the Block Direction.
+                    The Block Direction runs vertically in a language such as English, which has a horizontal
+                    writing
+                    mode. It would run horizontally in any language with a Vertical Writing Mode, such as Japanese.
+                    The corresponding Inline Direction is the direction in which inline contents (such as a sentence)
+                    would run.
+                </p>
+                <p>
+                    For many of the elements on your page the normal
+                    flow will create exactly the layout you need, however for more complex layouts you will need to
+                    alter this default behavior using some of the tools available to you in CSS. Starting with a
+                    well-structured HTML document is very important, as you can then work with the way things
+                    are laid out by default rather than fighting against it.
+                </p>
+                <p>
+                    The methods that can change how elements
+                    are laid out in CSS are as follows:
+                </p>
+                <ul>
+                    <li>
+                        The <code>display</code> property — Standard values such as
+                        <code>block</code>,<code>inline</code> or <code>inline-block</code> can
+                        change how elements behave in normal flow, for example making a block-level element behave like
+                        an inline
+                        element (see Types of CSS boxes for more information). We also have entire layout methods that
+                        are switched on via specific <code>display</code> values, for example CSS Grid and Flexbox,
+                        which alter how
+                        elements inside the element they are set on are laid out.
+                    </li>
+                    <li>
+                        Floats — Applying a <code>float</code> value such as <code>left</code> can cause block level
+                        elements to wrap alongside
+                        one
+                        side of an element, like the way images sometimes have text floating around them in magazine
+                        layouts.
+                    </li>
+                    <li>
+                        The <code>position</code> property — Allows you to precisely control the placement of boxes
+                        inside other
+                        boxes. <code>static</code> positioning is the default in normal flow, but you can cause
+                        elements to be laid out differently using other values, for example always fixed to the top of
+                        the browser viewport.
+                    </li>
+                    <li>
+                        Table layout — features designed for styling
+                        he parts of an HTML table can be used on non-table elements using <code>display: table</code>
+                        and associated
+                        properties.
+                    </li>
+                    <li>
+                        Multi-column layout — The Multi-column layout properties can cause the content of a block to
+                        layout in columns, as you might see in a newspaper.
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="main-section" id="The_display_property">
+            <header>The display property</header>
+            <article>
+                <p>
+                    The main methods of achieving page layout in CSS are all values of the <code>display</code>
+                    property. This property allows us to change the default way something displays. Everything in normal
+                    flow has a value of <code>display</code> , used as the default way that elements they are set on
+                    behave. For example, the fact that paragraphs in English display one below the other is due to the
+                    fact that they are styled with <code>display:block</code>. If you create a link around some text
+                    inside a paragraph, that link remains inline with the rest of the text, and doesn’t break onto a new
+                    line. This is because the <code>&lt;a&gt;</code> element is <code>display:inline</code> by default.
+                </p>
+                <p>
+                    You can change this default display behavior. For example, the <code>&lt;li&gt;</code> element is
+                    <code>display:block</code> y default, meaning that list items display one below the other in our
+                    English document. If we change the display value to <code>inline</code> they now display next to
+                    each other, as words would do in a sentence. The fact that you can change the value of
+                    <code>display</code> for any element means that you can pick HTML elements for their semantic
+                    meaning, without being concerned about how they will look. The way they look is something that you
+                    can change.
+                </p>
+                <p>
+                    In addition to being able to change the default presentation by turning an item from block to inline
+                    and vice versa, there are some bigger layout methods that start out as a value of
+                    <code>display</code> . However, when using these, you will generally need to invoke additional
+                    properties. The two values most important for our purposes when discussing layout are
+                    <code>display:flex</code> and <code>display:grid</code>.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Flexbox">
+            <header>Flexbox</header>
+            <p>
+                Flexbox is the short name for the Flexible Box Layout Module, designed to make it easy for us to lay
+                things out in one dimension — either as a row or as a column. To use flexbox, you apply
+                <code>display:flex</code> to the parent element of the elements you want to lay out; all its direct
+                children then become flex items. We can see this in a simple example.
+            </p>
+            <p>
+                The HTML markup below gives us a containing element, with a class of <code>wrapper</code>, inside which
+                are three <code>&lt;div&gt;</code> elements. By default these would display as block elements, below one
+                another, in our English language document.
+            </p>
+            <p>
+                However, if we add <code>display:flex</code> to the parent, the three items now arrange themselves into
+                columns. This is due to them becoming flex items and being affected by some initial values that flexbox
+                sets on the flex container. They are displayed in a row, because the initial value of
+                <code>flex-direction</code> set on their parent is <code>row</code>. They all appear to stretch to the
+                height of the tallest item, because the initial value of the <code>align-items</code> property set on
+                their parent is <code>stretch</code>. This means that the items stretch to the height of the flex
+                container, which in this case is defined by the tallest item. The items all line up at the start of the
+                container, leaving any extra space at the end of the row.
+            </p>
+            <pre>
+                <code>
+        <span class="color-green">.wrapper</span> <span class="color-grey">{</span>
+            <span class="color-red">display:</span> flex<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                </code>
+            </pre>
+            <pre>
+                <code>
+        <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"wrapper"</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box1"</span><span class="color-grey">&gt;</span>One<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box2"</span><span class="color-grey">&gt;</span>Two<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box3"</span><span class="color-grey">&gt;</span>Three<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+        <span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-yellow">&gt;</span>
+                </code>
+            </pre>
+            <div class="wrapper">
+                <div class="box1">One</div>
+                <div class="box2">Two</div>
+                <div class="box3">Three</div>
+            </div>
+            <p>
+                In addition to the above properties that can be applied to the flex container, there are properties that
+                can be applied to the flex items. These properties, among other things, can change the way that the
+                items flex, enabling them to expand and contract to fit into the available space.
+            </p>
+            <p>
+                As a simple example of this, we can add the <code>flex</code> property to all of our child items, with a
+                value of <code>1</code>. This will cause all of the items to grow and fill the container, rather than
+                leaving space at the end. If there is more space then the items will become wider; if there is less
+                space they will become narrower. In addition, if you add another element to the markup the items will
+                all become smaller to make space for it — they will adjust size to take up the same amount of space,
+                whatever that is.
+            </p>
+            <pre>
+                <code>
+        <span class="color-green">.wrapper</span> <span class="color-grey">{</span>
+            <span class="color-red">display:</span> flex<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                    
+        <span class="color-green">.wrapper</span> <span class="color-grey">></span> <span class="color-yellow">div</span> <span class="color-grey">{</span>
+            <span class="color-red">flex:</span> 1<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                </code>
+            </pre>
+            <pre>
+                <code>
+        <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"wrapper"</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box1"</span><span class="color-grey">&gt;</span>One<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box2"</span><span class="color-grey">&gt;</span>Two<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box3"</span><span class="color-grey">&gt;</span>Three<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+        <span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+                </code>
+            </pre>
+            <div class="wrapper2">
+                <div class="box1">One</div>
+                <div class="box2">Two</div>
+                <div class="box3">Three</div>
+            </div>
+        </section>
+        <section class="main-section" id="Grid_Layout">
+            <header>Grid Layout</header>
+            <p>
+                While flexbox is designed for one-dimensional layout, Grid Layout is designed for two dimensions —
+                lining things up in rows and columns.
+            </p>
+            <p>
+                Once again, you can switch on Grid Layout with a specific value of display — <code>display:grid</code>.
+                The below example uses similar markup to the flex example, with a container and some child elements. In
+                addition to using <code>display:grid</code>, we are also defining some row and column tracks on the
+                parent using the <code>grid-template-rows</code> and <code>grid-template-columns</code> properties
+                respectively. We've defined three columns each of <code>1fr</code> and two rows of <code>100px</code>. I
+                don't need to put any rules on the child elements; they are automatically placed into the cells our grid
+                has created.
+            </p>
+            <pre>
+                <code>
+        <span class="color-green">.wrapper</span> <span class="color-grey">{</span>
+            <span class="color-red">display:</span> grid<span class="color-grey">;</span>
+            <span class="color-red">grid-template-columns:</span> 1fr 1fr 1fr<span class="color-grey">;</span>
+            <span class="color-red">grid-template-rows:</span> 100px 100px<span class="color-grey">;</span>
+            <span class="color-red">grid-gap:</span> 10px<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                </code>
+            </pre>
+            <pre>
+                <code>
+        <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"wrapper"</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box1"</span><span class="color-grey">&gt;</span>One<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box2"</span><span class="color-grey">&gt;</span>Two<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box3"</span><span class="color-grey">&gt;</span>Three<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box4"</span><span class="color-grey">&gt;</span>Four<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box5"</span><span class="color-grey">&gt;</span>Five<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box6"</span><span class="color-grey">&gt;</span>Six<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+        <span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+                </code>
+            </pre>
+            <div class="wrapper3">
+                <div class="box1">One</div>
+                <div class="box2">Two</div>
+                <div class="box3">Three</div>
+                <div class="box4">Four</div>
+                <div class="box5">Five</div>
+                <div class="box6">Six</div>
+            </div>
+            <p> Once you have a grid, you can explicitly place your items on it, rather than relying on the
+                auto-placement behavior seen above. In the second example below we have defined the same grid, but this
+                time with three child items. We've set the start and end line of each item using the
+                <code>grid-column</code> and <code>grid-row</code> properties. This causes the items to span multiple
+                tracks.
+            </p>
+            <pre>
+                <code>
+        <span class="color-green">.wrapper</span> <span class="color-grey">{</span>
+            <span class="color-red">display:</span> grid<span class="color-grey">;</span>
+            <span class="color-red">grid-template-columns:</span> 1fr 1fr 1fr<span class="color-grey">;</span>
+            <span class="color-red">grid-template-rows:</span> 100px 100px<span class="color-grey">;</span>
+            <span class="color-red">grid-gap:</span> 10px<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                    
+        <span class="color-green">.box1</span> <span class="color-grey">{</span>
+            <span class="color-red">grid-column:</span> 2 / 4<span class="color-grey">;</span>
+            <span class="color-red">grid-row:</span> 1<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                    
+        <span class="color-green">.box2</span> <span class="color-grey">{</span>
+            <span class="color-red">grid-column:</span> 1<span class="color-grey">;</span>
+            <span class="color-red">grid-row:</span> 1 / 3<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                    
+        <span class="color-green">.box3</span> <span class="color-grey">{</span>
+            <span class="color-red">grid-row:</span> 2<span class="color-grey">;</span>
+            <span class="color-red">grid-column:</span> 3<span class="color-grey">;</span>
+        <span class="color-grey">}</span>
+                </code>
+            </pre>
+            <pre>
+                <code>
+        <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"wrapper"</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box1"</span><span class="color-grey">&gt;</span>One<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box2"</span><span class="color-grey">&gt;</span>Two<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+            <span class="color-grey">&lt;</span><span class="color-red">div</span> <span class="color-yellow">class</span>=<span class="color-green">"box3"</span><span class="color-grey">&gt;</span>Three<span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-grey">&gt;</span>
+        <span class="color-grey">&lt;&sol;</span><span class="color-red">div</span><span class="color-yellow">&gt;</span>
+                </code>
+            </pre>
+            <div class="wrapper4">
+                <div class="box7">One</div>
+                <div class="box8">Two</div>
+                <div class="box9">Three</div>
+            </div>
+        </section>
+        <section class="main-section" id="References">
+            <header>References</header>
+            <p>All the documentation in this page is taken from <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction">MDN</a></p>
+        </section>
+    </main>
+    <footer>
+            Designed & Built by Sara Vieira | &copy; 2021
+    </footer>
+
+</body>
+
+</html>
