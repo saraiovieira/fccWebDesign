@@ -19,3 +19,7 @@ A responsive landing page from an imaginary chocolate brand with a about us sect
 ### <a href="https://github.com/saraiovieira/fccWebDesign/tree/main/TechnicalDocumentationPage"> Technical Documentation Page </a>
 
 A responsive technical documentation page about CSS Layout
+
+### <a href="https://github.com/saraiovieira/fccWebDesign/tree/main/PersonalPortfolioWebpage"> Personal Portfolio Webpage </a>
+
+A responsive portfolio with all the projects I made so far
